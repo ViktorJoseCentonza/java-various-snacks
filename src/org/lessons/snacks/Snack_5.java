@@ -13,18 +13,18 @@ public class Snack_5 {
     }
 
     static public int[] arraySort(int[] array) {
-        int counter = 0;
-        do {
-            counter = 0;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i + 1]) {
-                    counter++;
-                    int tempValue = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = tempValue;
+
+        int index = array.length - 1;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int y = 0; y < index - 1; y++) {
+                if (array[y] > array[y + 1]) {
+                    int tempValue = array[y];
+                    array[y] = array[y + 1];
+                    array[y + 1] = tempValue;
                 }
             }
-        } while (counter != 0);
+            index--;
+        }
 
         return array;
     }
